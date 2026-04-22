@@ -1,0 +1,34 @@
+apiVersion: suse.ai/v1alpha1
+kind: CatalogIndex
+metadata:
+  name: examples
+spec:
+  displayName: Examples
+  description: Small example catalog for learning and smoke-testing the intake flow.
+  owners:
+    - ai-factory
+  bundleMode: generated
+  ui:
+    color: "#2563eb"
+  entries:
+    - name: assistant-starter
+      displayName: Assistant Starter
+      description: Minimal assistant stack with Ollama and Open WebUI.
+      category: AI Application
+      source:
+        git:
+          path: blueprints/assistant-starter/blueprint.yaml
+    - name: rag-workbench
+      displayName: RAG Workbench
+      description: Reference RAG stack with Ollama, Milvus, and Open WebUI.
+      category: AI Application
+      source:
+        git:
+          path: blueprints/rag-workbench/blueprint.yaml
+    - name: inference-lab
+      displayName: Inference Lab
+      description: GPU inference playground with NVIDIA GPU Operator and vLLM.
+      category: Serving
+      source:
+        git:
+          path: blueprints/inference-lab/blueprint.yaml

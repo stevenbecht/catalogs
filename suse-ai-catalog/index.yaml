@@ -1,0 +1,63 @@
+apiVersion: suse.ai/v1alpha1
+kind: CatalogIndex
+metadata:
+  name: suse-ai-catalog
+spec:
+  displayName: SUSE AI Catalog
+  description: Curated SUSE AI Factory blueprint catalog.
+  owners:
+    - suse-ai
+    - ai-platform
+  bundleMode: generated
+  ui:
+    color: "#0f766e"
+  entries:
+    - name: agentic-framework
+      displayName: Agentic Framework
+      description: End-to-end agentic AI blueprint with orchestration, guardrails, and chat UX.
+      category: AI Application
+      source:
+        git:
+          path: blueprints/agentic-framework/blueprint.yaml
+    - name: aiq-research-assistant
+      displayName: NVIDIA AIQ Research Assistant
+      description: NVIDIA AIQ Research Assistant blueprint deployed from upstream Helm chart source.
+      category: AI Application
+      source:
+        git:
+          path: blueprints/aiq-research-assistant/blueprint.yaml
+    - name: chatbot
+      displayName: Chatbot
+      description: Conversational AI blueprint with Ollama, Open WebUI, Guardrails AI, and Milvus.
+      category: Serving
+      source:
+        git:
+          path: blueprints/chatbot/blueprint.yaml
+    - name: inference
+      displayName: Inference
+      description: GPU inference blueprint with NVIDIA GPU Operator, Ray Serve, and vLLM.
+      category: Serving
+      source:
+        git:
+          path: blueprints/inference/blueprint.yaml
+    - name: kubeflow
+      displayName: Kubeflow
+      description: End-to-end ML platform with pipelines, notebooks, and training.
+      category: ML Platform
+      source:
+        git:
+          path: blueprints/kubeflow/blueprint.yaml
+    - name: mlflow
+      displayName: MLflow LLM Training
+      description: MLOps blueprint for GPU-backed Ray training with MLflow tracking and object storage.
+      category: Training
+      source:
+        git:
+          path: blueprints/mlflow/blueprint.yaml
+    - name: openwebui
+      displayName: Open WebUI Stack
+      description: Open WebUI with Pipelines and self-hosted Ollama runtime.
+      category: AI Application
+      source:
+        git:
+          path: blueprints/openwebui/blueprint.yaml

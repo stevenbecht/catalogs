@@ -1,0 +1,4 @@
+apiVersion: suse.ai/v1alpha1
+kind: Blueprint
+metadata:
+  name: chatbot

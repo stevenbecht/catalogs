@@ -1,0 +1,18 @@
+apiVersion: suse.ai/v1alpha1
+kind: Blueprint
+metadata:
+  name: demo-web
+spec:
+  displayName: Demo Web
+  description: Tiny raw-manifest demo workload for local-cluster release testing.
+  category: Examples
+  modules:
+    - moduleRef: demo-web
+      displayName: Demo Web
+      description: Simple HTTP echo deployment and service.
+      category: Examples
+      support: Community
+      source:
+        git:
+          path: resources
+      targetNamespace: demo-web

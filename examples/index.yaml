@@ -11,6 +11,13 @@ spec:
   ui:
     color: "#2563eb"
   entries:
+    - name: demo-web
+      displayName: Demo Web
+      description: Tiny raw-manifest workload for end-to-end release and local target testing.
+      category: Examples
+      source:
+        git:
+          path: blueprints/demo-web/blueprint.yaml
     - name: assistant-starter
       displayName: Assistant Starter
       description: Minimal assistant stack with Ollama and Open WebUI.

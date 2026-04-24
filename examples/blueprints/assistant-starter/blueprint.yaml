@@ -31,3 +31,10 @@ spec:
       targetNamespace: open-webui
       dependsOn:
         - ollama
+      values:
+        ollama:
+          enabled: false
+        ollamaUrls:
+          - http://assistant-starter-ollama.ollama.svc.cluster.local:11434
+        pipelines:
+          enabled: false

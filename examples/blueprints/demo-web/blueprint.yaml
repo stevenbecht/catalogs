@@ -8,6 +8,7 @@ spec:
   category: Examples
   modules:
     - moduleRef: demo-web
+      type: raw
       displayName: Demo Web
       description: Simple HTTP echo deployment and service.
       category: Examples

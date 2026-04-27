@@ -20,7 +20,7 @@ spec:
           path: blueprints/demo-web/blueprint.yaml
     - name: assistant-starter
       displayName: Assistant Starter
-      description: Minimal assistant stack with Ollama and Open WebUI.
+      description: Cohesive assistant environment that wires Open WebUI to an Ollama runtime.
       category: AI Application
       source:
         git:

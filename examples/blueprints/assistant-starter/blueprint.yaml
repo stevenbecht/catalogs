@@ -4,12 +4,12 @@ metadata:
   name: assistant-starter
 spec:
   displayName: Assistant Starter
-  description: Minimal assistant stack with Ollama and Open WebUI for catalog sync testing.
+  description: Cohesive assistant environment that wires Open WebUI to an Ollama runtime.
   category: AI Application
   modules:
     - moduleRef: ollama
       displayName: Ollama
-      description: Local LLM runtime for model serving.
+      description: Local model runtime consumed by the assistant UI.
       category: Serving
       support: Community
       source:
@@ -20,7 +20,7 @@ spec:
       targetNamespace: ollama
     - moduleRef: open-webui
       displayName: Open WebUI
-      description: Browser UI for interacting with local or remote models.
+      description: Assistant UI configured to consume the Ollama module from this blueprint.
       category: AI Application
       support: Community
       source:
@@ -32,9 +32,16 @@ spec:
       dependsOn:
         - ollama
       values:
+        nameOverride: "${suse.stream.name}-open-webui"
         ollama:
           enabled: false
         ollamaUrls:
-          - http://assistant-starter-ollama.ollama.svc.cluster.local:11434
+          - "http://${suse.stream.name}-ollama.ollama.svc.cluster.local:11434"
         pipelines:
           enabled: false
+        serviceAccount:
+          name: "${suse.stream.name}-open-webui"
+        websocket:
+          url: "redis://${suse.stream.name}-open-webui-redis:6379/0"
+          redis:
+            name: "${suse.stream.name}-open-webui-redis"

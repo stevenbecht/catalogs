@@ -6,13 +6,13 @@ spec:
   displayName: Demo Web
   description: Tiny raw-manifest demo workload for local-cluster release testing.
   category: Examples
+  support: Community
   modules:
     - moduleRef: demo-web
       type: raw
       displayName: Demo Web
       description: Simple HTTP echo deployment and service.
       category: Examples
-      support: Community
       source:
         git:
           path: resources

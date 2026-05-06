@@ -6,12 +6,12 @@ spec:
   displayName: Assistant Starter
   description: Cohesive assistant environment that wires Open WebUI to an Ollama runtime.
   category: AI Application
+  support: Community
   modules:
     - moduleRef: ollama
       displayName: Ollama
       description: Local model runtime consumed by the assistant UI.
       category: Serving
-      support: Community
       source:
         git:
           url: https://github.com/otwld/ollama-helm
@@ -22,7 +22,6 @@ spec:
       displayName: Open WebUI
       description: Assistant UI configured to consume the Ollama module from this blueprint.
       category: AI Application
-      support: Community
       source:
         git:
           url: https://github.com/open-webui/helm-charts
@@ -32,16 +31,16 @@ spec:
       dependsOn:
         - ollama
       values:
-        nameOverride: "${suse.stream.name}-open-webui"
+        nameOverride: "${suse.deployment.name}-open-webui"
         ollama:
           enabled: false
         ollamaUrls:
-          - "http://${suse.stream.name}-ollama.ollama.svc.cluster.local:11434"
+          - "http://${suse.deployment.name}-ollama.ollama.svc.cluster.local:11434"
         pipelines:
           enabled: false
         serviceAccount:
-          name: "${suse.stream.name}-open-webui"
+          name: "${suse.deployment.name}-open-webui"
         websocket:
-          url: "redis://${suse.stream.name}-open-webui-redis:6379/0"
+          url: "redis://${suse.deployment.name}-open-webui-redis:6379/0"
           redis:
-            name: "${suse.stream.name}-open-webui-redis"
+            name: "${suse.deployment.name}-open-webui-redis"

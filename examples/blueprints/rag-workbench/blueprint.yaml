@@ -6,12 +6,12 @@ spec:
   displayName: RAG Workbench
   description: Reference RAG stack with Ollama, Milvus, and Open WebUI.
   category: AI Application
+  support: Community
   modules:
     - moduleRef: ollama
       displayName: Ollama
       description: Local LLM runtime for embeddings and chat completion experiments.
       category: Serving
-      support: Community
       source:
         git:
           url: https://github.com/otwld/ollama-helm
@@ -22,7 +22,6 @@ spec:
       displayName: Milvus
       description: Vector database for semantic retrieval and embeddings search.
       category: Data
-      support: Community
       source:
         git:
           url: https://github.com/milvus-io/milvus-helm
@@ -33,7 +32,6 @@ spec:
       displayName: Open WebUI
       description: User interface for RAG and chat workflows.
       category: AI Application
-      support: Community
       source:
         git:
           url: https://github.com/open-webui/helm-charts

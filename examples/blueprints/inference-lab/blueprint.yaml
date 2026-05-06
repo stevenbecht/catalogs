@@ -6,6 +6,7 @@ spec:
   displayName: Inference Lab
   description: GPU inference playground with NVIDIA GPU Operator and vLLM.
   category: Serving
+  support: Community
   sbom:
     enabled: true
     scanImages: true
@@ -14,7 +15,6 @@ spec:
       displayName: NVIDIA GPU Operator
       description: GPU operator for drivers, toolkit, and device plugins.
       category: Infrastructure
-      support: Community
       source:
         git:
           url: https://github.com/NVIDIA/gpu-operator
@@ -25,7 +25,6 @@ spec:
       displayName: vLLM Runtime
       description: High-throughput vLLM runtime for model serving experiments.
       category: Serving
-      support: Community
       source:
         git:
           url: https://github.com/vllm-project/vllm

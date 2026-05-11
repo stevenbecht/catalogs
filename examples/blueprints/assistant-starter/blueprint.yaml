@@ -18,6 +18,9 @@ spec:
           ref: ollama-1.42.0
           path: .
       targetNamespace: ollama
+      images:
+        - name: ollama
+          image: ollama/ollama:0.15.6
     - moduleRef: open-webui
       displayName: Open WebUI
       description: Assistant UI configured to consume the Ollama module from this blueprint.
@@ -44,3 +47,8 @@ spec:
           url: "redis://${suse.deployment.name}-open-webui-redis:6379/0"
           redis:
             name: "${suse.deployment.name}-open-webui-redis"
+      images:
+        - name: open-webui
+          image: ghcr.io/open-webui/open-webui:0.7.2
+        - name: redis
+          image: redis:7.4.2-alpine3.21

@@ -7,6 +7,11 @@ spec:
   description: Cohesive assistant environment that wires Open WebUI to an Ollama runtime.
   category: AI Application
   support: Community
+  requirements:
+    capabilities:
+      - name: nvidia-gpu-runtime
+        version: ">=24.9.0"
+        level: Recommended
   modules:
     - moduleRef: ollama
       displayName: Ollama

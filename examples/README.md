@@ -6,7 +6,7 @@ This catalog deliberately stays small and approachable. It uses the same shape
 as the real catalog so users can learn one catalog format and one import flow.
 
 The flagship example is `assistant-starter`. It demonstrates the central
-blueprint idea: one deployable assistant environment composed from internal
+blueprint idea: one deployable assistant environment composed from named
 modules. The module DAG is:
 
 ```text
@@ -16,6 +16,9 @@ ollama -> open-webui
 `ollama` provides the model runtime. `open-webui` depends on it and receives the
 release-scoped Ollama service URL through blueprint values rendered by the
 controller.
+
+The blueprint recommends `nvidia-gpu-runtime` so GPU-enabled clusters can
+surface acceleration readiness without blocking CPU-only lab deployments.
 
 Catalog structure:
 
